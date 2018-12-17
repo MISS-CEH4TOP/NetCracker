@@ -2,8 +2,11 @@ package interfaces;
 
 import entity.Person;
 
+import java.util.Comparator;
+import java.util.function.Predicate;
+
 /** Интерфейс методов для работы с пользователем */
-public interface PersonInterface {
+public interface PersonInterface  {
     /** Метод поиска пользователя по идентификатору
      * @param id - идентификатор пользоватея
      * @return возврящает пользователя
@@ -24,4 +27,6 @@ public interface PersonInterface {
      * @param person - объект класса Person
      */
     void printPerson(Person person);
+
+    Person[] search(Predicate<Person> filter);
 }
