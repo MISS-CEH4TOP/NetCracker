@@ -1,5 +1,6 @@
 package repository;
 
+import annotations.SortingAnnotation;
 import entity.Person;
 import interfaces.PersonInterface;
 
@@ -23,7 +24,8 @@ public class PersonRepository implements PersonInterface{
     /** Массив для хранения пользователей */
     Person[] persones = new Person[0];
 
-    ISorting sorting = new BubbleSort();
+    @SortingAnnotation
+    ISorting sorting;
     //ISorting selectSort = new SelectionSort(persones);
 
     public void sort (Comparator<Person> comparator) {
